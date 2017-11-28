@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (c) 2016-2014, CloudSub technology Co., Ltd.
+
+    All rights reserved.
+
+-->
+
+<!--
+    Description:  MyBatis mysql generated configuration。 
+    Version: 1.0.0, Nov 21, 2016
+    Author: 
+-->
+
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <properties resource="application.properties"/>
+    <context id="MySQLTables" targetRuntime="MyBatis3" defaultModelType="flat">
+        <!--<plugin type="com.gznb.maven.plugin.mybatis.RenameExampleClassPlugin">-->
+            <!--<property name="searchString" value="Example$"/>-->
+            <!--<property name="replaceString" value="Criteria"/>-->
+        <!--</plugin>-->
+        <!--<plugin type="com.gznb.maven.plugin.mybatis.SerializablePlugin"/>-->
+        <!--<plugin type="com.gznb.maven.plugin.mybatis.MySQLPaginationPlugin"></plugin>-->
+
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <property name="suppressAllComments" value="false"/>
+        </commentGenerator>
+
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="${spring.datasource.url}"
+                        userId="${spring.datasource.username}" password="${spring.datasource.password}">
+        </jdbcConnection>
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage="com.example.demo.entity.gen" targetProject="src/main/java/">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="com.example.demo.dao.gen" targetProject="src/main/resources/">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.example.demo.dao.gen"
+                             targetProject="src/main/java/">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+        
+        <!-- <table tableName="t_feedback" domainObjectName="Feedback">
+           <generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />
+           <columnOverride column="ID" property="id" javaType="String" />
+        </table> -->
+
+        <table tableName="%">
+           <generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />
+           <columnOverride column="ID" property="id" javaType="String" />
+        </table>
+
+        <!-- 后台管理菜单-->
+        <!--<table tableName="t_menu" domainObjectName="Menu">-->
+        <!--<generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />-->
+        <!--<columnOverride column="ID" property="id" javaType="String" />-->
+        <!--</table>-->
+
+
+        <!--&lt;!&ndash; 电台 &ndash;&gt;-->
+        <!--<table tableName="t_radio" domainObjectName="Radio">-->
+        <!--<generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />-->
+        <!--<columnOverride column="ID" property="id" javaType="String" />-->
+        <!--</table>-->
+
+        <!--&lt;!&ndash; 常见问题 &ndash;&gt;-->
+        <!--<table tableName="t_common_problem" domainObjectName="CommonProblem">-->
+        <!--<generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />-->
+        <!--<columnOverride column="ID" property="id" javaType="String" />-->
+        <!--</table>-->
+
+        <!--&lt;!&ndash; 专辑 &ndash;&gt;-->
+        <!--<table tableName="t_abum" domainObjectName="Abum">-->
+        <!--<generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />-->
+        <!--<columnOverride column="ID" property="id" javaType="String" />-->
+        <!--</table>-->
+
+        <!--&lt;!&ndash; 专辑订阅 &ndash;&gt;-->
+        <!--<table tableName="t_abum_collection" domainObjectName="AbumCollection">-->
+        <!--<generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />-->
+        <!--<columnOverride column="ID" property="id" javaType="String" />-->
+        <!--<columnOverride column="uid" property="uid" javaType="String" />-->
+        <!--</table>-->
+
+        <!--&lt;!&ndash; 专辑节目 &ndash;&gt;-->
+        <!--<table tableName="t_abum_program" domainObjectName="AbumProgram">-->
+        <!--<generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />-->
+        <!--<columnOverride column="ID" property="id" javaType="String" />-->
+        <!--</table>-->
+
+        <!--&lt;!&ndash; 专辑节目-审核流程的操作记录 &ndash;&gt;-->
+        <!--<table tableName="t_program_audit_record" domainObjectName="ProgramAuditRecord">-->
+        <!--<generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />-->
+        <!--<columnOverride column="ID" property="id" javaType="String" />-->
+        <!--</table>-->
+
+        <!--&lt;!&ndash; 电台专辑视图 &ndash;&gt;-->
+        <!--<table tableName="v_abum_collection" domainObjectName="Vabumcollection">-->
+        <!--<generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />-->
+        <!--<columnOverride column="ID" property="id" javaType="String" />-->
+        <!--</table>-->
+
+        <!--&lt;!&ndash; 文件管理 &ndash;&gt;-->
+        <!--<table tableName="t_file_info" domainObjectName="FileInfo">-->
+        <!--<generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />-->
+        <!--<columnOverride column="ID" property="id" javaType="String" />-->
+        <!--</table>-->
+        <!--&lt;!&ndash; 终端文件管理 &ndash;&gt;-->
+        <!--<table tableName="t_device_file" domainObjectName="DeviceFile">-->
+        <!--<generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />-->
+        <!--<columnOverride column="ID" property="id" javaType="String" />-->
+        <!--</table>-->
+
+        <!--&lt;!&ndash; 学生设备禁用情况 &ndash;&gt;-->
+        <!--<table tableName="t_student_device" domainObjectName="StudentDevice">-->
+        <!--<generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />-->
+        <!--<columnOverride column="ID" property="id" javaType="String" />-->
+        <!--</table>--> 
+
+        <!--&lt;!&ndash; 专辑相关视图 &ndash;&gt;-->
+        <!--<table tableName="v_album_info" domainObjectName="AlbumInfo">-->
+        <!--<generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />-->
+        <!--<columnOverride column="ID" property="id" javaType="String" />-->
+        <!--</table>-->
+
+        <!-- 节目相关视图 -->
+        <!--<table tableName="v_program_info" domainObjectName="ProgramInfo">-->
+        <!--<generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />-->
+        <!--<columnOverride column="ID" property="id" javaType="String" />-->
+        <!--<columnOverride column="album_id" property="albumId" javaType="String" />-->
+        <!--</table>-->
+
+        <!--&lt;!&ndash; 设备信息表 &ndash;&gt;-->
+        <!--<table tableName="t_device" domainObjectName="Device">-->
+        <!--<generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />-->
+        <!--<columnOverride column="ID" property="id" javaType="String" />-->
+        <!--</table>-->
+
+        <!--&lt;!&ndash;  考勤信息表 &ndash;&gt;-->
+        <!--<table tableName="t_attend_info" domainObjectName="AttendInfo">-->
+        <!--<generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />-->
+        <!--<columnOverride column="ID" property="id" javaType="String" />-->
+        <!--</table>-->
+
+        <!--&lt;!&ndash; 通知情况 &ndash;&gt;-->
+        <!--<table tableName="t_notice" domainObjectName="Notice">-->
+        <!--<generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />-->
+        <!--<columnOverride column="ID" property="id" javaType="String" />-->
+        <!--</table>-->
+
+        <!--&lt;!&ndash; 通知类型情况 &ndash;&gt;-->
+        <!--<table tableName="t_notice_type" domainObjectName="NoticeType">-->
+        <!--<generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />-->
+        <!--<columnOverride column="ID" property="id" javaType="String" />-->
+        <!--</table>-->
+
+        <!--&lt;!&ndash; 消息情况 &ndash;&gt;-->
+        <!--<table tableName="t_msg" domainObjectName="Message">-->
+        <!--<generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />-->
+        <!--<columnOverride column="ID" property="id" javaType="String" />-->
+        <!--</table>-->
+        <!--&lt;!&ndash; 消息操作选项 &ndash;&gt;-->
+        <!--<table tableName="t_msg_operation" domainObjectName="MessageOperation">-->
+        <!--<generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />-->
+        <!--<columnOverride column="ID" property="id" javaType="String" />-->
+        <!--</table>-->
+        <!--&lt;!&ndash; 静默参数任务执行表 &ndash;&gt;-->
+        <!--<table tableName="t_task" domainObjectName="Task">-->
+        <!--<generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />-->
+        <!--<columnOverride column="ID" property="id" javaType="String" />-->
+        <!--</table>-->
+
+        <!--&lt;!&ndash; 静默参数任务历史表 &ndash;&gt;-->
+        <!--<table tableName="t_h_task" domainObjectName="Htask">-->
+        <!--<columnOverride column="ID" property="id" javaType="String" />-->
+        <!--</table>-->
+
+        <!--&lt;!&ndash; wifi设置信息表 &ndash;&gt;-->
+        <!--<table tableName="t_device_wifi" domainObjectName="DeviceWifi">-->
+        <!--<generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />-->
+        <!--<columnOverride column="ID" property="id" javaType="String" />-->
+        <!--</table>-->
+        <!--&lt;!&ndash; wifi设置信息表 &ndash;&gt;-->
+        <!--<table tableName="t_import_record" domainObjectName="ImportRecord">-->
+        <!--<generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />-->
+        <!--<columnOverride column="ID" property="id" javaType="String" />-->
+        <!--</table>-->
+
+        <!--&lt;!&ndash; Banner表 &ndash;&gt;-->
+        <!--<table tableName="t_banner" domainObjectName="Banner">-->
+        <!--<generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />-->
+        <!--<columnOverride column="ID" property="id" javaType="String" />-->
+        <!--</table>-->
+        <!--&lt;!&ndash; Banner分类表 &ndash;&gt;-->
+        <!--<table tableName="t_banner_type" domainObjectName="BannerType">-->
+        <!--<generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />-->
+        <!--<columnOverride column="ID" property="id" javaType="String" />-->
+        <!--</table>-->
+
+        <!--&lt;!&ndash;  专辑节目评论信息表 &ndash;&gt;-->
+        <!--<table tableName="t_comment" domainObjectName="Comment">-->
+        <!--<generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />-->
+        <!--<columnOverride column="ID" property="id" javaType="String" />-->
+        <!--</table>-->
+        <!--&lt;!&ndash; 黑名单&ndash;&gt;-->
+        <!--<table tableName="t_blacklist" domainObjectName="BlackList">-->
+        <!--<generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />-->
+        <!--<columnOverride column="ID" property="id" javaType="String" />-->
+        <!--</table>-->
+        <!--&lt;!&ndash; 白名单&ndash;&gt;-->
+        <!--<table tableName="t_whitelist" domainObjectName="WhiteList">-->
+        <!--<generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />-->
+        <!--<columnOverride column="ID" property="id" javaType="String" />-->
+        <!--</table>-->
+        <!--&lt;!&ndash;电台推送计划&ndash;&gt;-->
+        <!--<table tableName="tp_task" domainObjectName="TPTask">-->
+        <!--<generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />-->
+        <!--<columnOverride column="ID" property="id" javaType="String" />-->
+        <!--</table>-->
+        <!--&lt;!&ndash; 用户订阅少先队电台记录 &ndash;&gt;-->
+        <!--<table tableName="v_user_task" domainObjectName="UserTask">-->
+        <!--<generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />-->
+        <!--<columnOverride column="ID" property="id" javaType="String" />-->
+        <!--</table>-->
+        
+        <!-- <table tableName="tp_abum_program" domainObjectName="TPAbumProgram">
+        <generatedKey column="ID" sqlStatement="select uuid_short()"
+        identity="false" />
+        <columnOverride column="ID" property="id" javaType="String" />
+        </table> -->
+
+        <!--<table tableName="tp_task_record" domainObjectName="TPTaskRecord">-->
+        <!--<generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />-->
+        <!--<columnOverride column="ID" property="id" javaType="String" />-->
+        <!--</table>-->
+        <!--<table tableName="t_program_tip" domainObjectName="ProgramTip">-->
+        <!--<generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />-->
+        <!--<columnOverride column="ID" property="id" javaType="String" />-->
+        <!--<columnOverride column="program_id" property="programId" javaType="String" />-->
+        <!--<columnOverride column="tip_id" property="tipId" javaType="String" />-->
+        <!--</table>-->
+
+        <!--&lt;!&ndash; 评论-用户点赞的关联表 &ndash;&gt;-->
+        <!--<table tableName="t_comment_collection" domainObjectName="CommentCollection">-->
+        <!--<generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />-->
+        <!--<columnOverride column="ID" property="id" javaType="String" />-->
+        <!--</table>-->
+
+        <!--&lt;!&ndash; 成长记录 &ndash;&gt;-->
+        <!--<table tableName="t_growth_record" domainObjectName="GrowthRecord">-->
+        <!--<generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />-->
+        <!--<columnOverride column="ID" property="id" javaType="String" />-->
+        <!--</table>-->
+        <!--&lt;!&ndash; 雏鹰章表 &ndash;&gt;-->
+        <!--<table tableName="t_medal" domainObjectName="Medal">-->
+        <!--<generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />-->
+        <!--<columnOverride column="ID" property="id" javaType="String" />-->
+        <!--</table>-->
+        <!--&lt;!&ndash; 雏鹰章计数表 &ndash;&gt;-->
+        <!--<table tableName="t_medal_count" domainObjectName="MedalCount">-->
+        <!--<generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />-->
+        <!--<columnOverride column="ID" property="id" javaType="String" />-->
+        <!--</table>-->
+
+        <!--&lt;!&ndash; 节目类目关联视图 &ndash;&gt;-->
+        <!--<table tableName="v_abum_program_type" domainObjectName="ProgramType">-->
+        <!--</table>-->
+        <!--&lt;!&ndash; 读后感视图 &ndash;&gt;-->
+        <!--<table tableName="v_comment" domainObjectName="VComment">-->
+        <!--</table>         -->
+        <!--<table tableName="tp_album_push_info" domainObjectName="TPAlbumPushInfo">-->
+            <!--<generatedKey column="ID" sqlStatement="select uuid_short()" identity="false"/>-->
+            <!--<columnOverride column="ID" property="id" javaType="String"/>-->
+            <!--<columnOverride column="abum_id" property="abumId" javaType="String" />-->
+        <!--</table>-->
+        <!--<table tableName="tp_program_push_record" domainObjectName="TPProgramPushRecord">
+            <generatedKey column="ID" sqlStatement="select uuid_short()" identity="false"/>
+            <columnOverride column="ID" property="id" javaType="String"/>
+        </table> -->
+        
+        <!-- 设备上传的每小时数据包  -->
+        <!--<table tableName="t_device_hourly_message" domainObjectName="DeviceHourlyMessage">-->
+        <!--<generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />-->
+        <!--<columnOverride column="ID" property="id" javaType="String" />-->
+        <!--</table>-->
+
+        <!-- 通知表的视图  -->
+        <!--<table tableName="v_notice_info" domainObjectName="NoticeInfo">-->
+            <!--<generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />-->
+            <!--<columnOverride column="ID" property="id" javaType="String" />-->
+        <!--</table>-->
+        
+        <!-- <table tableName="t_device_upgrade" domainObjectName="DeviceUpgrade">
+            <generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />
+            <columnOverride column="ID" property="id" javaType="String" />
+            <columnOverride column="create_member_id" property="createMemberId" javaType="String" />
+        </table> -->
+
+        <!-- 雏鹰争章/成长记录消息推送表  -->
+        <!--<table tableName="t_medal_growth_notice" domainObjectName="MedalGrowthNotice">-->
+            <!--<generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />-->
+            <!--<columnOverride column="ID" property="id" javaType="String" />-->
+        <!--</table>-->
+
+        <!-- 通知，考勤，雏鹰争章/成长记录推送消息，三方汇总的数据表  -->
+        <!--<table tableName="t_notice_merge" domainObjectName="NoticeMerge">-->
+            <!--<generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />-->
+            <!--<columnOverride column="ID" property="id" javaType="String" />-->
+            <!--<columnOverride column="data_id" property="dataId" javaType="String" />-->
+        <!--</table>-->
+        <!-- 通知消息 -->
+        <!--<table tableName="t_msg" domainObjectName="Message">-->
+            <!--<generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />-->
+            <!--<columnOverride column="ID" property="id" javaType="String" />-->
+        <!--</table>-->
+        <!--&lt;!&ndash; 申请绑定通知消息 &ndash;&gt;-->
+        <!--<table tableName="t_msg_operation" domainObjectName="MessageOperation">-->
+            <!--<generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />-->
+            <!--<columnOverride column="ID" property="id" javaType="String" />-->
+        <!--</table>-->
+
+        <!-- 批量充值 -->
+        <!--<table tableName="t_batch_pay" domainObjectName="BatchPay">-->
+            <!--<generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />-->
+            <!--<columnOverride column="ID" property="id" javaType="String" />-->
+        <!--</table>-->
+
+        </context>
+    </generatorConfiguration>
